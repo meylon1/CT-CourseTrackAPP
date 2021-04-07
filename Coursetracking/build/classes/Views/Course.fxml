@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="651.0" prefWidth="984.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.CourseController">
+    <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff" height="420.0" layoutX="11.0" layoutY="94.0" stroke="BLACK" strokeType="INSIDE" width="957.0" />
+        <GridPane layoutX="14.0" layoutY="150.0" prefHeight="167.0" prefWidth="305.0">
+            <columnConstraints>
+                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="245.0" minWidth="10.0" prefWidth="114.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="402.00000762939453" minWidth="10.0" prefWidth="187.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="59.0" minHeight="10.0" prefHeight="48.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="66.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="102.0" minHeight="10.0" prefHeight="46.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label text="Name" textFill="#eeeff0" GridPane.rowIndex="1">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+                <Label prefHeight="25.0" prefWidth="124.0" text="Number" textFill="#eeeff0">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+                <TextField fx:id="txtNumber" prefHeight="25.0" prefWidth="145.0" GridPane.columnIndex="1" />
+                <Label text="Credits" textFill="#eeeff0" GridPane.rowIndex="2">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <TextField fx:id="txtName" prefHeight="25.0" prefWidth="252.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <ComboBox fx:id="cmbCredits" prefHeight="25.0" prefWidth="198.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            </children>
+        </GridPane>
+        <Button fx:id="btnSaveCourse" layoutX="175.0" layoutY="541.0" mnemonicParsing="false" onAction="#SaveCourseHandler" prefHeight="30.0" prefWidth="61.0" text="Save" textFill="#242424">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Button>
+        <Button fx:id="btnBackCourse" layoutX="246.0" layoutY="541.0" mnemonicParsing="false" onAction="#BackCourseHandler" prefHeight="30.0" prefWidth="61.0" text="Back" textFill="#100f0f">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Button>
+        <TableView fx:id="tvCourse" layoutX="322.0" layoutY="150.0" onMouseClicked="#tvCourseMouseClicked" prefHeight="358.0" prefWidth="645.0">
+            <columns>
+                <TableColumn fx:id="IdColumn" minWidth="0.0" prefWidth="50.0" text="ID" />
+                <TableColumn fx:id="NumberColumn" prefWidth="116.0" text="Number" />
+                <TableColumn fx:id="NameColumn" minWidth="0.0" prefWidth="328.0" text="Name" />
+                <TableColumn fx:id="CreditColumn" prefWidth="150.0" text="Credit" />
+            </columns>
+        </TableView>
+        <Label layoutX="387.0" layoutY="102.0" text="Manage Courses" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="28.0" />
+            </font>
+        </Label>
+      <Button fx:id="btnModifyCourse" layoutX="104.0" layoutY="541.0" mnemonicParsing="false" onAction="#ModifyCourseHandler" prefHeight="30.0" prefWidth="61.0" text="Modify" />
+      <Button fx:id="btnDeleteCourse" layoutX="30.0" layoutY="541.0" mnemonicParsing="false" onAction="#DeleteCourseHandler" prefHeight="30.0" prefWidth="61.0" text="Delete" />
+    </children>
+</AnchorPane>
